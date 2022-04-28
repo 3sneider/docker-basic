@@ -1,0 +1,28 @@
+# version del yamel
+version: '3.7'
+
+# nos va a ayudar a agrupar los componentes
+services:
+
+  # no necesitamos declarar una red ya que compose lo agrupa en la misma red
+
+  # alias que va a recibir la primera imagen
+  app:
+    image: imageName
+    ports:
+      - 3000:3000
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+
+  #alias que va a recibir la segunda imagen la cual tambien referenciamos en enviroment
+  # en nuestra primera imagen
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./localFolder:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
