@@ -8,7 +8,7 @@ para correr una imagen primero debemos tener identificada la imagen, para ello n
 
 la manera estandar o comun de bajar una imagen por ejemplo postgres seria
 
-*** docker pull [image]
+*** docker pull [image]  
 *** docker pull postgres
 
 si corremos el comando run antes del pull este automaticamente baja la imagen primero y luego la corre
